@@ -33,11 +33,22 @@
   <script>
     window.addEventListener('DOMContentLoaded', function() {
       var audio = document.getElementById('bg-audio');
-      // Try to play immediately on page load
-      audio.play().catch(function(e) {
-        // If autoplay is blocked, show a message or fallback
-        console.log('Autoplay blocked:', e);
-      });
+      // Try to play after 1 second on DOMContentLoaded
+      setTimeout(function() {
+        audio.play().catch(function(e) {
+          console.log('Autoplay blocked (timeout):', e);
+        });
+      }, 1000);
+      // Also play on scroll
+      function playOnScroll() {
+        if (audio.paused) {
+          audio.play().catch(function(e) {
+            console.log('Autoplay blocked (scroll):', e);
+          });
+        }
+        window.removeEventListener('scroll', playOnScroll);
+      }
+      window.addEventListener('scroll', playOnScroll);
     });
   </script>
 </body>
