@@ -17,14 +17,14 @@
   <section class="collage">
     <h2>Am I Super!!!</h2>
     <div class="collage-images" id="carousel">
-      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.15 PM (1).jpeg" alt="Collage Image 1">
-      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.15 PM.jpeg" alt="Collage Image 2">
-      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.16 PM (1).jpeg" alt="Collage Image 3">
-      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.16 PM.jpeg" alt="Collage Image 4">
-      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.17 PM (1).jpeg" alt="Collage Image 5">
+      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.15 PM (1).jpeg" alt="Collage Image 1" style="--delay:0.1s">
+      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.15 PM.jpeg" alt="Collage Image 2" style="--delay:0.2s">
+      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.16 PM (1).jpeg" alt="Collage Image 3" style="--delay:0.3s">
+      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.16 PM.jpeg" alt="Collage Image 4" style="--delay:0.4s">
+      <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.17 PM (1).jpeg" alt="Collage Image 5" style="--delay:0.5s">
     </div>
   </section>
-  <audio id="bg-audio" autoplay loop controls>
+  <audio id="bg-audio" autoplay loop style="display:none">
     <source src="./photos/bgm.mp3" type="audio/mpeg">
     <source src="./photos/bgm.ogg" type="audio/ogg">
     Your browser does not support the audio element.
@@ -49,6 +49,20 @@
         window.removeEventListener('scroll', playOnScroll);
       }
       window.addEventListener('scroll', playOnScroll);
+    });
+  </script>
+  <script>
+    // Auto-scroll collage images horizontally every 2 seconds
+    window.addEventListener('DOMContentLoaded', function() {
+      var carousel = document.getElementById('carousel');
+      var scrollStep = 120;
+      var scrollInterval = setInterval(function() {
+        if (carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth) {
+          carousel.scrollLeft += scrollStep;
+        } else {
+          carousel.scrollLeft = 0;
+        }
+      }, 2000);
     });
   </script>
 </body>
