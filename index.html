@@ -24,7 +24,21 @@
       <img src="./photos/WhatsApp Image 2025-07-26 at 5.08.17 PM (1).jpeg" alt="Collage Image 5">
     </div>
   </section>
-  <audio id="bg-audio" src="./photos/bgm.mp3" autoplay loop></audio>
+  <audio id="bg-audio" autoplay loop controls>
+    <source src="./photos/bgm.mp3" type="audio/mpeg">
+    <source src="./photos/bgm.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('bg-audio');
+      // Try to play immediately on page load
+      audio.play().catch(function(e) {
+        // If autoplay is blocked, show a message or fallback
+        console.log('Autoplay blocked:', e);
+      });
+    });
+  </script>
 </body>
 </html>
