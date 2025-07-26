@@ -124,48 +124,88 @@ img.slide {
   to { transform: translateX(0); }
 }
 @media (max-width: 600px) {
-  .gallery img {
-    width: 90vw;
-    height: 90vw;
-    max-width: 300px;
-    max-height: 300px;
+  body {
+    background: #1e3c72;
+    color: #fff;
+    overflow-x: hidden;
   }
-}
-/* Add responsive styles */
-@media (max-width: 768px) {
+  header {
+    background: #ffcc00;
+    padding: 18px 0 8px 0;
+  }
   header h1 {
-    font-size: 1.5em;
-    text-align: center;
+    font-size: 1.3em;
+    color: #1e3c72;
+    text-shadow: none;
+    margin: 0 10px;
   }
-
-  .about p {
+  .about {
+    background: #fff;
+    color: #1e3c72;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 18px 8px 10px 8px;
     font-size: 1em;
-    padding: 0 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   }
-
   .gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 0 8px;
   }
-
+  .gallery img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 auto;
+  }
+  .collage {
+    background: #2a5298;
+    color: #fff;
+    padding: 18px 8px;
+    border-radius: 10px;
+    margin: 10px 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  .collage h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    text-shadow: none;
+  }
+  .collage-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
   .collage-images img {
     width: 100%;
     height: auto;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    margin: 0;
   }
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.2em;
+/* Extra small devices: stack collage images vertically */
+@media (max-width: 400px) {
+  .collage-images {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
+}
 
-  .about p {
-    font-size: 0.9em;
-  }
-
-  .collage h2 {
-    font-size: 1.2em;
-    text-align: center;
-  }
+/* Improve text contrast for all devices */
+.about, .gallery img, .collage, .collage-images img {
+  color: #1e3c72;
+}
+.collage h2 {
+  color: #ffcc00;
 }
