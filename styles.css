@@ -1,3 +1,84 @@
+:root {
+  --bg-main: #f6f8fa;
+  --bg-hero: linear-gradient(135deg, #1e3c72 60%, #2a5298 100%);
+  --accent: #ffcc00;
+  --text-main: #222;
+  --text-light: #fff;
+  --card-bg: #fff;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --primary-font: 'Inter', Arial, sans-serif;
+  --heading-font: 'Poppins', Arial, sans-serif;
+}
+body {
+  background: var(--bg-main);
+  font-family: var(--primary-font);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  /* Glassmorphism effect */
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+header, .hero {
+  font-family: var(--heading-font);
+}
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  margin-bottom: 0.5em;
+}
+.hero {
+  width: 100vw;
+  min-height: 320px;
+  background: var(--bg-hero);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 40px 20px;
+  position: relative;
+  text-align: center;
+}
+.hero img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  margin-bottom: 18px;
+}
+.hero .cta-btn {
+  margin-top: 24px;
+  padding: 12px 32px;
+  background: var(--accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: 24px;
+  font-size: 1.1em;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s;
+}
+.hero .cta-btn:hover {
+  background: #ffe066;
+}
+section {
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 0 16px;
+}
+.about {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 32px 24px;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 32px;
+}
 body {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -16,17 +97,6 @@ h1 {
   font-size: 3em;
   color: #1e3c72;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.about {
-  margin: 40px auto 20px auto;
-  width: 90%;
-  max-width: 500px;
-  background: #ffffff;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  color: #1e3c72;
 }
 .gallery {
   display: flex;
@@ -106,6 +176,329 @@ h1 {
 .collage-images img.exit {
   animation: collageImgOut 0.7s forwards;
 }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+.skill-card {
+  background: var(--bg-hero);
+  color: var(--text-light);
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 1.1em;
+  font-family: var(--heading-font);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+.skill-card span {
+  font-size: 1.5em;
+}
+.skill-card:hover {
+  transform: scale(1.08);
+}
+.projects {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  transition: box-shadow 0.2s;
+}
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.project-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.project-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2em;
+}
+.project-card .stack {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 8px;
+}
+.project-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+.project-card a:hover {
+  text-decoration: underline;
+}
+.timeline {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+}
+.timeline-list {
+  position: relative;
+  margin-left: 24px;
+  border-left: 3px solid var(--accent);
+  padding-left: 18px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.timeline-content h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.1em;
+}
+.timeline-content span {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 8px;
+  display: block;
+}
+.timeline-content p {
+  margin: 0;
+  color: #444;
+}
+.contact {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 400px;
+  margin: 0 auto 18px auto;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  font-family: var(--primary-font);
+}
+.contact-form button {
+  background: var(--accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1em;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s;
+}
+.contact-form button:hover {
+  background: #ffe066;
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 2em;
+}
+.contact-links a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-links a:hover {
+  color: #1e3c72;
+}
+.favorites {
+  background: #ffe066;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.favorite-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+.favorite-card {
+  background: #fff;
+  color: #1e3c72;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 1.2em;
+  font-family: var(--heading-font);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+.favorite-card span {
+  font-size: 1.5em;
+}
+.favorite-card:hover {
+  transform: scale(1.08);
+}
+.adventures {
+  background: #fff3cd;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.adventure-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+.adventure-card {
+  background: #fff;
+  color: #1e3c72;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 1em;
+  font-family: var(--heading-font);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 180px;
+  transition: transform 0.2s;
+}
+.adventure-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.adventure-card:hover {
+  transform: scale(1.08);
+}
+.sayhi {
+  background: #d1e7dd;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.sayhi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 320px;
+  margin: 0 auto 18px auto;
+}
+.sayhi-form input,
+.sayhi-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  font-family: var(--primary-font);
+}
+.sayhi-form button {
+  background: #1e3c72;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1em;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s;
+}
+.sayhi-form button:hover {
+  background: #2a5298;
+}
+.fun-gallery {
+  background: #e0bbff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.fun-gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+.fun-gallery-card {
+  background: #fff;
+  color: #1e3c72;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 1em;
+  font-family: var(--heading-font);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 180px;
+  transition: transform 0.2s;
+}
+.fun-gallery-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.fun-gallery-card:hover {
+  transform: scale(1.08);
+}
 @keyframes fadeEffect {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -138,68 +531,367 @@ h1 {
   from { opacity: 1; transform: scale(1) translateY(0); }
   to { opacity: 0; transform: scale(0.7) translateY(40px); }
 }
+/* Animate on scroll (AOS) basic fade-in effect for sections */
+section, .hero, .skills, .project-list, .timeline-list, .contact {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
+}
+section.visible, .hero.visible, .skills.visible, .project-list.visible, .timeline-list.visible, .contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 900px) {
+  section, .fun-gallery, .favorites, .adventures, .sayhi {
+    max-width: 98vw;
+    padding: 18px 4vw;
+  }
+  .hero {
+    padding: 32px 4vw 24px 4vw;
+  }
+}
 @media (max-width: 600px) {
-  body {
-    background: #1e3c72;
-    color: #fff;
-    overflow-x: hidden;
-  }
-  header {
-    background: #ffcc00;
-    padding: 18px 0 8px 0;
-  }
-  header h1 {
-    font-size: 1.3em;
-    color: #1e3c72;
-    text-shadow: none;
-    margin: 0 10px;
-  }
-  .about {
-    background: #fff;
-    color: #1e3c72;
-    border-radius: 10px;
-    padding: 12px;
-    margin: 18px 8px 10px 8px;
-    font-size: 1em;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-  }
-  .gallery {
-    display: grid;
-    grid-template-columns: 1fr;
+  .skills, .favorite-list, .adventure-list, .fun-gallery-list {
+    flex-direction: column;
     gap: 12px;
-    margin: 12px 0;
-    padding: 0 8px;
+    align-items: center;
   }
-  .gallery img {
-    width: 100%;
+  .skill-card, .favorite-card, .adventure-card, .fun-gallery-card {
+    width: 90vw;
     max-width: 320px;
-    height: auto;
-    border-radius: 12px;
-    margin: 0 auto;
+    font-size: 1em;
+    padding: 12px 10px;
   }
-  .collage {
-    max-width: 98vw;
-    padding: 12px 2px;
+  .adventure-card img, .fun-gallery-card img {
+    width: 70px;
+    height: 70px;
   }
-  .collage-images {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 98vw;
+  .hero img {
+    width: 80px;
+    height: 80px;
   }
-  .collage-images img {
-    width: 60px;
-    height: 60px;
+  h1, h2 {
+    font-size: 1.3em;
+  }
+  .cta-btn {
+    font-size: 1em;
+    padding: 10px 18px;
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
   }
 }
 @media (max-width: 400px) {
-  .collage-images {
-    grid-template-columns: 1fr;
+  h1, h2 {
+    font-size: 1em;
+  }
+  .skill-card, .favorite-card, .adventure-card, .fun-gallery-card {
+    font-size: 0.95em;
+    padding: 8px 4px;
   }
 }
-
+body {
+  overflow-x: hidden;
+}
 /* Improve text contrast for all devices */
 .about, .gallery img, .collage, .collage-images img {
   color: #1e3c72;
 }
 .collage h2 {
   color: #ffcc00;
+}
+body.dark-mode {
+  --bg-main: #181a1b;
+  --bg-hero: linear-gradient(135deg, #232526 60%, #414345 100%);
+  --accent: #ffe066;
+  --text-main: #f6f8fa;
+  --text-light: #fff;
+  --card-bg: #232526;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.28);
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+  color: #ffe066;
+}
+body.dark-mode .skill-card, body.dark-mode .project-card, body.dark-mode .about, body.dark-mode .projects, body.dark-mode .timeline, body.dark-mode .contact {
+  background: #232526;
+  color: #f6f8fa;
+}
+body.dark-mode .project-card a, body.dark-mode .contact-links a {
+  color: #ffe066;
+}
+body.dark-mode .project-card a:hover, body.dark-mode .contact-links a:hover {
+  color: #ffcc00;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  margin-bottom: 18px;
+  border: 4px solid #ffe066;
+}
+.hero h1 {
+  color: #1e3c72;
+  background: #ffe066;
+  padding: 8px 18px;
+  border-radius: 18px;
+  font-size: 2em;
+  font-family: var(--heading-font);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: inline-block;
+}
+body.dark-mode .hero h1 {
+  color: #ffe066;
+  background: #232526;
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.3em;
+    padding: 6px 10px;
+  }
+}
+section, .fun-gallery, .favorites, .adventures, .sayhi, .about, .collage, .contact {
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.22);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-radius: 22px;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  color: #222 !important;
+}
+body.dark-mode section, body.dark-mode .fun-gallery, body.dark-mode .favorites, body.dark-mode .adventures, body.dark-mode .sayhi, body.dark-mode .about, body.dark-mode .collage, body.dark-mode .contact {
+  background: rgba(35,37,38,0.65);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.38);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  color: #ffe066 !important;
+}
+/* Superhero theme backgrounds */
+body.spiderman-theme {
+  background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+}
+body.spiderman-theme section,
+body.spiderman-theme .fun-gallery,
+body.spiderman-theme .favorites,
+body.spiderman-theme .adventures,
+body.spiderman-theme .sayhi,
+body.spiderman-theme .about,
+body.spiderman-theme .collage,
+body.spiderman-theme .contact {
+  background: rgba(255, 81, 47, 0.32);
+  box-shadow: 0 8px 32px 0 rgba(221,36,118,0.22);
+  border: 1.5px solid rgba(255,81,47,0.22);
+  color: #fff !important;
+}
+body.spiderman-theme .hero {
+  background: linear-gradient(135deg, #ff512f 60%, #dd2476 100%);
+  color: #fff;
+}
+body.spiderman-theme h1, body.spiderman-theme h2, body.spiderman-theme h3 {
+  color: #fff;
+  background: #dd2476;
+}
+body.spiderman-theme .favorite-card, body.spiderman-theme .adventure-card, body.spiderman-theme .fun-gallery-card {
+  background: #ffb3c6;
+  color: #dd2476;
+}
+body.spiderman-theme.dark-mode {
+  background: linear-gradient(135deg, #232526 0%, #dd2476 100%);
+}
+body.spiderman-theme.dark-mode section,
+body.spiderman-theme.dark-mode .fun-gallery,
+body.spiderman-theme.dark-mode .favorites,
+body.spiderman-theme.dark-mode .adventures,
+body.spiderman-theme.dark-mode .sayhi,
+body.spiderman-theme.dark-mode .about,
+body.spiderman-theme.dark-mode .collage,
+body.spiderman-theme.dark-mode .contact {
+  background: rgba(35,37,38,0.65);
+  box-shadow: 0 8px 32px 0 rgba(221,36,118,0.38);
+  border: 1.5px solid rgba(255,81,47,0.18);
+  color: #ffe066 !important;
+}
+body.spiderman-theme.dark-mode .hero {
+  background: linear-gradient(135deg, #232526 60%, #dd2476 100%);
+  color: #ffe066;
+}
+body.spiderman-theme.dark-mode h1, body.spiderman-theme.dark-mode h2, body.spiderman-theme.dark-mode h3 {
+  color: #ffe066;
+  background: #232526;
+}
+body.spiderman-theme.dark-mode .favorite-card, body.spiderman-theme.dark-mode .adventure-card, body.spiderman-theme.dark-mode .fun-gallery-card {
+  background: #232526;
+  color: #ffe066;
+}
+
+body.batman-theme {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+}
+body.batman-theme section,
+body.batman-theme .fun-gallery,
+body.batman-theme .favorites,
+body.batman-theme .adventures,
+body.batman-theme .sayhi,
+body.batman-theme .about,
+body.batman-theme .collage,
+body.batman-theme .contact {
+  background: rgba(35,37,38,0.65);
+  box-shadow: 0 8px 32px 0 rgba(65,67,69,0.38);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  color: #ffe066 !important;
+}
+body.batman-theme .hero {
+  background: linear-gradient(135deg, #232526 60%, #414345 100%);
+  color: #ffe066;
+}
+body.batman-theme h1, body.batman-theme h2, body.batman-theme h3 {
+  color: #ffe066;
+  background: #232526;
+}
+body.batman-theme .favorite-card, body.batman-theme .adventure-card, body.batman-theme .fun-gallery-card {
+  background: #232526;
+  color: #ffe066;
+}
+body.batman-theme.dark-mode {
+  background: linear-gradient(135deg, #181a1b 0%, #414345 100%);
+}
+body.batman-theme.dark-mode section,
+body.batman-theme.dark-mode .fun-gallery,
+body.batman-theme.dark-mode .favorites,
+body.batman-theme.dark-mode .adventures,
+body.batman-theme.dark-mode .sayhi,
+body.batman-theme.dark-mode .about,
+body.batman-theme.dark-mode .collage,
+body.batman-theme.dark-mode .contact {
+  background: rgba(24,26,27,0.85);
+  box-shadow: 0 8px 32px 0 rgba(65,67,69,0.48);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  color: #ffe066 !important;
+}
+body.batman-theme.dark-mode .hero {
+  background: linear-gradient(135deg, #181a1b 60%, #414345 100%);
+  color: #ffe066;
+}
+body.batman-theme.dark-mode h1, body.batman-theme.dark-mode h2, body.batman-theme.dark-mode h3 {
+  color: #ffe066;
+  background: #181a1b;
+}
+body.batman-theme.dark-mode .favorite-card, body.batman-theme.dark-mode .adventure-card, body.batman-theme.dark-mode .fun-gallery-card {
+  background: #181a1b;
+  color: #ffe066;
+}
+
+body.superman-theme {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+body.superman-theme section,
+body.superman-theme .fun-gallery,
+body.superman-theme .favorites,
+body.superman-theme .adventures,
+body.superman-theme .sayhi,
+body.superman-theme .about,
+body.superman-theme .collage,
+body.superman-theme .contact {
+  background: rgba(30,60,114,0.32);
+  box-shadow: 0 8px 32px 0 rgba(42,82,152,0.22);
+  border: 1.5px solid rgba(30,60,114,0.22);
+  color: #ffe066 !important;
+}
+body.superman-theme .hero {
+  background: linear-gradient(135deg, #1e3c72 60%, #2a5298 100%);
+  color: #ffe066;
+}
+body.superman-theme h1, body.superman-theme h2, body.superman-theme h3 {
+  color: #ffe066;
+  background: #1e3c72;
+}
+body.superman-theme .favorite-card, body.superman-theme .adventure-card, body.superman-theme .fun-gallery-card {
+  background: #e0e7ff;
+  color: #1e3c72;
+}
+body.superman-theme.dark-mode {
+  background: linear-gradient(135deg, #232526 0%, #2a5298 100%);
+}
+body.superman-theme.dark-mode section,
+body.superman-theme.dark-mode .fun-gallery,
+body.superman-theme.dark-mode .favorites,
+body.superman-theme.dark-mode .adventures,
+body.superman-theme.dark-mode .sayhi,
+body.superman-theme.dark-mode .about,
+body.superman-theme.dark-mode .collage,
+body.superman-theme.dark-mode .contact {
+  background: rgba(35,37,38,0.65);
+  box-shadow: 0 8px 32px 0 rgba(42,82,152,0.38);
+  border: 1.5px solid rgba(30,60,114,0.18);
+  color: #ffe066 !important;
+}
+body.superman-theme.dark-mode .hero {
+  background: linear-gradient(135deg, #232526 60%, #2a5298 100%);
+  color: #ffe066;
+}
+body.superman-theme.dark-mode h1, body.superman-theme.dark-mode h2, body.superman-theme.dark-mode h3 {
+  color: #ffe066;
+  background: #232526;
+}
+body.superman-theme.dark-mode .favorite-card, body.superman-theme.dark-mode .adventure-card, body.superman-theme.dark-mode .fun-gallery-card {
+  background: #232526;
+  color: #ffe066;
+}
+
+body.spacehero-theme {
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+}
+body.spacehero-theme section,
+body.spacehero-theme .fun-gallery,
+body.spacehero-theme .favorites,
+body.spacehero-theme .adventures,
+body.spacehero-theme .sayhi,
+body.spacehero-theme .about,
+body.spacehero-theme .collage,
+body.spacehero-theme .contact {
+  background: rgba(15,32,39,0.45);
+  box-shadow: 0 8px 32px 0 rgba(44,83,100,0.22);
+  border: 1.5px solid rgba(44,83,100,0.22);
+  color: #e0bbff !important;
+}
+body.spacehero-theme .hero {
+  background: linear-gradient(135deg, #0f2027 60%, #2c5364 100%);
+  color: #e0bbff;
+}
+body.spacehero-theme h1, body.spacehero-theme h2, body.spacehero-theme h3 {
+  color: #e0bbff;
+  background: #2c5364;
+}
+body.spacehero-theme .favorite-card, body.spacehero-theme .adventure-card, body.spacehero-theme .fun-gallery-card {
+  background: #d1e7dd;
+  color: #2c5364;
+}
+body.spacehero-theme.dark-mode {
+  background: linear-gradient(135deg, #181a1b 0%, #2c5364 100%);
+}
+body.spacehero-theme.dark-mode section,
+body.spacehero-theme.dark-mode .fun-gallery,
+body.spacehero-theme.dark-mode .favorites,
+body.spacehero-theme.dark-mode .adventures,
+body.spacehero-theme.dark-mode .sayhi,
+body.spacehero-theme.dark-mode .about,
+body.spacehero-theme.dark-mode .collage,
+body.spacehero-theme.dark-mode .contact {
+  background: rgba(24,26,27,0.85);
+  box-shadow: 0 8px 32px 0 rgba(44,83,100,0.32);
+  border: 1.5px solid rgba(44,83,100,0.12);
+  color: #e0bbff !important;
+}
+body.spacehero-theme.dark-mode .hero {
+  background: linear-gradient(135deg, #181a1b 60%, #2c5364 100%);
+  color: #e0bbff;
+}
+body.spacehero-theme.dark-mode h1, body.spacehero-theme.dark-mode h2, body.spacehero-theme.dark-mode h3 {
+  color: #e0bbff;
+  background: #181a1b;
+}
+body.spacehero-theme.dark-mode .favorite-card, body.spacehero-theme.dark-mode .adventure-card, body.spacehero-theme.dark-mode .fun-gallery-card {
+  background: #181a1b;
+  color: #e0bbff;
 }
